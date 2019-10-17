@@ -2,20 +2,20 @@ const Generator = require('yeoman-generator')
 const toHeader = require('js-headercase')
 const toPascal = require('js-pascalcase')
 
-const staticTemplates = [
-  '.editorconfig',
-  '.gitignore',
-  '.huskyrc.js',
-  '.nvmrc',
-  '.php_cs.dist',
-  '.scrutinizer.yml',
-  '.travis.yml',
-  'package.json',
-  'phpinsights.php',
-  'phpunit.xml',
-  'src/.gitkeep',
-  'tests/.gitkeep'
-]
+const staticTemplates = {
+  '_editorconfig': '.editorconfig',
+  '_gitignore': '.gitignore',
+  '_huskyrc.js': '.huskyrc.js',
+  '_nvmrc': '.nvmrc',
+  '_php_cs.dist': '.php_cs.dist',
+  '_scrutinizer.yml': '.scrutinizer.yml',
+  '_travis.yml': '.travis.yml',
+  'package.json': 'package.json',
+  'phpinsights.php': 'phpinsights.php',
+  'phpunit.xml': 'phpunit.xml',
+  'src/_gitkeep': 'src/.gitkeep',
+  'tests/_gitkeep': 'tests/.gitkeep'
+}
 
 const dynamicTemplates = [
   'CHANGELOG.md',
@@ -58,10 +58,9 @@ module.exports = class extends Generator {
   }
 
   _copyFiles () {
-    staticTemplates.forEach(f => this.fs.copy(
-      this.templatePath(f),
-      this.destinationPath(f)
-    ))
+    for (const [from, to] of Object.entries(staticTemplates)) {
+      this.fs.copy(this.templatePath(from), this.destinationPath(to))
+    }
   }
 
   _copyTemplates () {
