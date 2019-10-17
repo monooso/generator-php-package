@@ -1,0 +1,42 @@
+{
+  "name": "@monooso/generator-php-package",
+  "version": "1.0.0",
+  "description": "Yeoman generator for scaffolding a generic PHP package",
+  "license": "MIT",
+  "homepage": "https://github.com/monooso/generator-php-package",
+  "bugs": "https://github.com/monooso/generator-laravel-php/issues",
+  "author": "Stephen Lewis <code@stephenlewis.me>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/monooso/generator-php-package.git"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "php",
+    "php-package",
+    "yeoman-generator"
+  ],
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "js-headercase": "^1.2.1",
+    "js-pascalcase": "^1.2.1",
+    "yeoman-generator": "^4.0.2"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "standard": "^14.3.1",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0"
+  },
+  "standard": {
+    "enable": true,
+    "run": "onType",
+    "ignore": [
+      "node_modules/**"
+    ]
+  }
+}
