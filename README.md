@@ -1,15 +1,16 @@
-# Laravel package generator
+# PHP package generator
 
-[![Build Status](https://img.shields.io/travis/monooso/generator-laravel-package.svg)](https://travis-ci.org/monooso/generator-laravel-package)
-[![NPM Version](https://img.shields.io/npm/v/@monooso/generator-laravel-package.svg)](https://www.npmjs.org/package/@monooso/generator-laravel-package)
+[![Build Status](https://img.shields.io/travis/monooso/generator-php-package.svg)](https://travis-ci.org/monooso/generator-php-package)
+[![NPM Version](https://img.shields.io/npm/v/@monooso/generator-php-package.svg)](https://www.npmjs.org/package/@monooso/generator-php-package)
 
 ## Overview
-Yeoman generator for scaffolding a Laravel package. Generates the following files, based on the information you provide:
+Yeoman generator for scaffolding a generic PHP package. Generates the following files, based on the information you provide:
 
 - `src/.gitkeep`
 - `tests/.gitkeep`
 - `.editorconfig`
 - `.gitignore`
+- `.huskyrc.js`
 - `.nvmrc`
 - `.php_cs.dist`
 - `.scrutinizer.yml`
@@ -18,6 +19,7 @@ Yeoman generator for scaffolding a Laravel package. Generates the following file
 - `composer.json`
 - `LICENSE.txt`
 - `package.json`
+- `phpinsights.php`
 - `phpunit.xml`
 - `README.md`
 
@@ -26,13 +28,13 @@ Install [Yeoman](https://yeoman.io) and this package using [npm](https://npmjs.c
 
 ```
 npm install -g yo
-npm install -g @monooso/generator-laravel-package
+npm install -g @monooso/generator-php-package
 ```
 
 ## Usage
 
 ```
-yo @monooso/laravel-package
+yo @monooso/php-package
 ```
 
 ## License
