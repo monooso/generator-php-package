@@ -9,6 +9,8 @@ describe('laravel-package:app', async function () {
       .withPrompts({
         authorName: 'John Doe',
         authorEmail: 'john@doe.com',
+        authorWebsite: 'https://www.thedoes.com',
+        license: 'MIT',
         packageName: 'john-doe/yeoman-package',
         packageDescription: 'A test package'
       })
@@ -48,6 +50,8 @@ describe('laravel-package:app', async function () {
     assert.fileContent(filename, '"source": "https://github.com/john-doe/yeoman-package"')
     assert.fileContent(filename, '"name": "John Doe"')
     assert.fileContent(filename, '"email": "john@doe.com"')
+    assert.fileContent(filename, '"homepage": "https://www.thedoes.com"')
+    assert.fileContent(filename, '"license": "MIT"')
     assert.fileContent(filename, '"JohnDoe\\\\YeomanPackage\\\\": "src/"')
     assert.fileContent(filename, '"JohnDoe\\\\YeomanPackage\\\\Tests\\\\": "tests/"')
   })
@@ -59,6 +63,16 @@ describe('laravel-package:app', async function () {
     assert.fileContent(filename, 'Copyright (c) 2019 John Doe')
   })
 
+  it('creates package.json', async function () {
+    const filename = 'package.json'
+
+    assert.file(filename)
+    assert.fileContent(filename, '"name": "John Doe"')
+    assert.fileContent(filename, '"email": "john@doe.com"')
+    assert.fileContent(filename, '"website": "https://www.thedoes.com"')
+    assert.fileContent(filename, '"license": "MIT"')
+  })
+
   it('creates README.md', async function () {
     const filename = 'README.md'
 
@@ -68,9 +82,6 @@ describe('laravel-package:app', async function () {
     assert.fileContent(filename, 'Yeoman Package requires ...')
     assert.fileContent(filename, 'Install Yeoman Package using')
     assert.fileContent(filename, 'composer require john-doe/yeoman-package')
-    assert.fileContent(filename, 'Yeoman Package is open source software')
-    assert.fileContent(filename, '[the MIT license](https://github.com/john-doe/yeoman-package/blob/master/LICENSE.txt')
-
     assert.fileContent(filename, '<a href="https://travis-ci.org/john-doe/yeoman-package"><img src="https://img.shields.io/travis/john-doe/yeoman-package/master.svg" alt="Build Status"/></a>')
     assert.fileContent(filename, '<a href="https://scrutinizer-ci.com/g/john-doe/yeoman-package"><img src="https://img.shields.io/scrutinizer/g/john-doe/yeoman-package.svg" alt="Quality Score"/></a>')
     assert.fileContent(filename, '<a href="https://scrutinizer-ci.com/g/john-doe/yeoman-package"><img src="https://img.shields.io/scrutinizer/coverage/g/john-doe/yeoman-package.svg" alt="Coverage"/></a>')

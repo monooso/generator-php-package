@@ -3,7 +3,7 @@
     "type": "library",
     "description": "<%= packageDescription %>",
     "homepage": "https://github.com/<%= packageName %>",
-    "license": "MIT",
+    "license": "<%= license %>",
     "keywords": [],
     "support": {
         "issues": "https://github.com/<%= packageName %>/issues",
@@ -12,7 +12,8 @@
     "authors": [
         {
             "name": "<%= authorName %>",
-            "email": "<%= authorEmail %>"
+            "email": "<%= authorEmail %>"<% if (authorWebsite) { %>,
+            "homepage": "<%= authorWebsite %>"<% } %>
         }
     ],
     "config": {

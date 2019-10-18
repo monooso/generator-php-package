@@ -20,6 +20,3 @@ composer require <%= packageName %>
 ```
 
 ## Usage
-
-## License
-<%= title %> is open source software, released under [the MIT license](https://github.com/<%= packageName %>/blob/master/LICENSE.txt).
