@@ -1,6 +1,6 @@
 {
   "name": "@monooso/generator-php-package",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Yeoman generator for scaffolding a generic PHP package",
   "license": "MIT",
   "homepage": "https://github.com/monooso/generator-php-package",
