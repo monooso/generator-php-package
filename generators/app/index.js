@@ -1,6 +1,5 @@
 const Generator = require('yeoman-generator')
-const toHeader = require('js-headercase')
-const toPascal = require('js-pascalcase')
+const { toHeaderCase, toPascalCase } = require('js-convert-case')
 const licenses = require('generator-license').licenses
 
 const staticTemplates = {
@@ -132,10 +131,10 @@ module.exports = class extends Generator {
   _templateContext () {
     const autoloadNamespace = this.props.packageName
       .split('/')
-      .map(segment => toPascal(segment))
+      .map(segment => toPascalCase(segment))
       .join('\\\\')
 
-    const title = toHeader(this.props.packageName.split('/')[1])
+    const title = toHeaderCase(this.props.packageName.split('/')[1])
 
     return {
       autoloadNamespace,
