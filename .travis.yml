@@ -6,9 +6,8 @@ node_js:
   - "12"
   - "14"
 sudo: false
-cache:
-  directories:
-    - node_modules
-    - $(npm config get prefix)/bin/yo
+before_script:
+  - npm install -g yo
+cache: npm
 script:
   - npm run test
