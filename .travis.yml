@@ -6,8 +6,6 @@ node_js:
   - "12"
   - "14"
 sudo: false
-before_script:
-  - npm install -g yo
 cache:
   directories:
     - node_modules
